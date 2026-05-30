@@ -1,3 +1,4 @@
+<php>
 
 class HomeController extends Controller 
 {
@@ -5,4 +6,5 @@ class HomeController extends Controller
     {
         return view('home');
     }
-}   
+}
+</php>
