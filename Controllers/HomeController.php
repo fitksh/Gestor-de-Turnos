@@ -1,10 +1,9 @@
-<php>
+<?php
 
-class HomeController extends Controller 
+class HomeController
 {
     public function index()
     {
-        return view('home');
+        return null;
     }
 }
-</php>
