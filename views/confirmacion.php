@@ -1,37 +1,11 @@
 <?php
 
 include 'views/layout/header.php';
-require_once 'Models/Turno.php';
 
-$idPeluquero = (int) $_POST['id_peluquero'];
-
-$fecha = $_POST['fecha'];
-
-$hora = $_POST['hora'];
-
-$contacto = trim($_POST['contacto']);
-
-$fechaInicio = $fecha . ' ' . $hora . ':00';
-
-$fechaFin = date(
-    'Y-m-d H:i:s',
-    strtotime($fechaInicio . ' +1 hour')
-);
-
-/** @var PDO $db */
-$turnoModel = new Turno($db);
-
-$guardado = false;
-
-if (!$turnoModel->existeTurno($idPeluquero, $fechaInicio)) {
-
-    $guardado = $turnoModel->guardar(
-        $idPeluquero,
-        $fechaInicio,
-        $fechaFin,
-        $contacto
-    );
-}
+/**
+ * Variables definidas en TurnoController::confirmacion():
+ * @var bool $guardado
+ */
 ?>
 
 <?php if ($guardado): ?>

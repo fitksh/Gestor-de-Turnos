@@ -1,11 +1,11 @@
 <?php
 class Database {
-    private $host;
-    private $db_name;
-    private $username;
-    private $password;
-    private $port;
-    public $conn;
+    private string $host;
+    private string $db_name;
+    private string $username;
+    private string $password;
+    private string $port;
+    public ?PDO $conn;
 
     public function __construct()
     {

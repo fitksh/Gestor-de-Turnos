@@ -7,7 +7,10 @@ $dotenv->load();
 
 // 2. Inclusiones de la App
 require_once 'config/database.php';
-require_once 'Models/Peluquero.php';
+require_once 'controllers/HomeController.php';
+require_once 'controllers/PeluqueroController.php';
+require_once 'controllers/ReservaController.php';
+require_once 'controllers/TurnoController.php';
 
 // 3. Conexión
 $database = new Database();
@@ -18,21 +21,27 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 switch ($page) {
     case 'home':
-        include 'views/home.php';
+        $controller = new HomeController($db);
+        $controller->index();
         break;
     case 'peluqueros':
-        include 'views/peluqueros.php';
+        $controller = new PeluqueroController($db);
+        $controller->index();
         break;
     case 'calendario':
-        include 'views/calendario.php';
+        $controller = new TurnoController($db);
+        $controller->calendario();
         break;
     case 'reserva':
-        include 'views/reserva.php';
+        $controller = new ReservaController($db);
+        $controller->index();
         break;
     case 'confirmacion':
-        include 'views/confirmacion.php';
+        $controller = new TurnoController($db);
+        $controller->confirmacion();
         break;
     default:
-        include 'views/home.php';
+        $controller = new HomeController($db);
+        $controller->index();
         break;
 }

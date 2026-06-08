@@ -2,27 +2,14 @@
 
 include 'views/layout/header.php';
 
-require_once 'Models/Turno.php';
+/**
+ * Variables proporcionadas por TurnoController:
+ * @var int $idPeluquero
+ * @var array<string,bool> $turnosOcupados
+ */
+?>
 
-/** @var PDO $db */
-
-$idPeluquero = (int) ($_GET['id_peluquero'] ?? 0);
-
-$turnoModel = new Turno($db);
-$ocupados = $turnoModel->obtenerOcupados($idPeluquero);
-
-$turnosOcupados = [];
-
-foreach ($ocupados as $turno) {
-
-    $fechaHora = date(
-        'Y-m-d H:i',
-        strtotime($turno['fecha_inicio'])
-    );
-
-    $turnosOcupados[$fechaHora] = true;
-}
-
+<?php
 $horarios = [
     '09:00',
     '10:00',

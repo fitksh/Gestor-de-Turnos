@@ -2,8 +2,12 @@
 
 class HomeController
 {
-    public function index()
+    public function __construct(private PDO $db)
     {
-        return null;
+    }
+
+    public function index(): void
+    {
+        include __DIR__ . '/../views/home.php';
     }
 }

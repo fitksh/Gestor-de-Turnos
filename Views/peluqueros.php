@@ -2,10 +2,9 @@
 
 include 'views/layout/header.php'; 
 
-// Instanciamos el modelo utilizando la conexión $db creada en index.php
-/** @var PDO $db */
-$peluqueroModel = new Peluquero($db);
-$resultado = $peluqueroModel->listar();
+/**
+ * @var PDOStatement $resultado
+ */
 ?>
 
 <div class="row justify-content-center text-center mb-4">

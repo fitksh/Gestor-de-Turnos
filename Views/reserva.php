@@ -1,10 +1,11 @@
 <?php include 'views/layout/header.php'; 
-    
-    
-$idPeluquero = (int) ($_GET['id_peluquero'] ?? 0);
-$fecha = $_GET['fecha'] ?? '';
-$hora = $_GET['hora'] ?? '';
 
+/**
+ * Variables definidas en ReservaController:
+ * @var int $idPeluquero
+ * @var string $fecha
+ * @var string $hora
+ */
 ?>
 
     <div class="row justify-content-center">
