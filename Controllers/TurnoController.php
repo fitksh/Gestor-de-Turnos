@@ -24,6 +24,24 @@ class TurnoController
             $turnosOcupados[$fechaHora] = true;
         }
 
+        // Datos en español para los títulos de las fechas
+        $diasSemana = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+        $meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+
+        // Generar títulos en español para los próximos 6 días
+        $fechas = [];
+        for ($dia = 0; $dia < 6; $dia++) {
+            $fecha = date('Y-m-d', strtotime("+$dia days"));
+            $timestamp = strtotime($fecha);
+            $diaSemana = $diasSemana[date('w', $timestamp)];
+            $diaNum = date('d', $timestamp);
+            $mes = $meses[date('n', $timestamp) - 1];
+
+            $fechas[$fecha] = [
+                'titulo' => ucfirst($diaSemana) . ' ' . $diaNum . ' de ' . $mes
+            ];
+        }
+
         include __DIR__ . '/../views/calendario.php';
     }
 

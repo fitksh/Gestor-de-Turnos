@@ -6,6 +6,7 @@ include 'views/layout/header.php';
  * Variables proporcionadas por TurnoController:
  * @var int $idPeluquero
  * @var array<string,bool> $turnosOcupados
+ * @var array<string,array> $fechas
  */
 ?>
 
@@ -30,22 +31,13 @@ $horarios = [
 
 <div class="row g-3 justify-content-center mb-5">
 
-<?php for ($dia = 0; $dia < 7; $dia++): ?>
-
-    <?php
-        $fecha = date('Y-m-d', strtotime("+$dia days"));
-
-        $titulo = strftime(
-            '%A %d de %B',
-            strtotime($fecha)
-        );
-    ?>
+<?php foreach ($fechas as $fecha => $datos): ?>
 
     <div class="col-md-4">
         <div class="card shadow-sm border-0">
 
             <div class="card-header bg-dark text-warning text-center fw-bold">
-                <?= ucfirst($titulo) ?>
+                <?= htmlspecialchars($datos['titulo']) ?>
             </div>
 
             <div class="card-body p-3">
@@ -91,7 +83,7 @@ $horarios = [
         </div>
     </div>
 
-<?php endfor; ?>
+<?php endforeach; ?>
 
 </div>
 
