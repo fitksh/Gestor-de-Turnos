@@ -3,7 +3,7 @@ class Peluquero {
     private PDO $conn;
     private $table_name = "peluqueros";
 
-    public function __construct($db) {
+    public function __construct(PDO $db) {
         $this->conn = $db;
     }
     

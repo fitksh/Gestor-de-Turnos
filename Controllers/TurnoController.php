@@ -11,7 +11,7 @@ class TurnoController
         $this->db = $db;
     }
 
-    public function calendario(): void
+    public function renderCalendario(): void
     {
         $idPeluquero = (int) ($_GET['id_peluquero'] ?? 0);
 
@@ -45,7 +45,7 @@ class TurnoController
         include __DIR__ . '/../views/calendario.php';
     }
 
-    public function confirmacion(): void
+    public function confirmarTurno(): void
     {
         $idPeluquero = (int) ($_POST['id_peluquero'] ?? 0);
         $fecha = trim($_POST['fecha'] ?? '');
@@ -61,7 +61,7 @@ class TurnoController
             $turnoModel = new Turno($this->db);
 
             if (!$turnoModel->existeTurno($idPeluquero, $fechaInicio)) {
-                $guardado = $turnoModel->guardar(
+                $guardado = $turnoModel->guardarTurno(
                     $idPeluquero,
                     $fechaInicio,
                     $fechaFin,

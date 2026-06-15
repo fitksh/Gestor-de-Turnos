@@ -3,7 +3,7 @@
 include 'views/layout/header.php';
 
 /**
- * Variables definidas en TurnoController::confirmacion():
+ * Variables definidas en TurnoController::confirmarTurno():
  * @var bool $guardado
  */
 ?>

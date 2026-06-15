@@ -2,8 +2,8 @@
 
     <footer class="bg-dark text-light text-center py-4 mt-auto border-top border-secondary">
         <div class="container">
-            <p class="mb-1">&copy; <?= date('Y'); ?> Barber & Co. - Todos los derechos reservados.</p>
-            <small class="text-muted">Desarrollado en PHP puro + Bootstrap</small>
+            <p class="mb-1">&copy; <?= date('Y'); ?> Paez Barber - Todos los derechos reservados.</p>
+            <small class="text-muted">Desarrollado en PHP + Bootstrap</small>
         </div>
     </footer>
 

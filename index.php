@@ -21,7 +21,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 switch ($page) {
     case 'home':
-        $controller = new HomeController($db);
+        $controller = new HomeController();
         $controller->index();
         break;
     case 'peluqueros':
@@ -30,18 +30,18 @@ switch ($page) {
         break;
     case 'calendario':
         $controller = new TurnoController($db);
-        $controller->calendario();
+        $controller->renderCalendario();
         break;
     case 'reserva':
-        $controller = new ReservaController($db);
+        $controller = new ReservaController();
         $controller->index();
         break;
     case 'confirmacion':
         $controller = new TurnoController($db);
-        $controller->confirmacion();
+        $controller->confirmarTurno();
         break;
     default:
-        $controller = new HomeController($db);
+        $controller = new HomeController();
         $controller->index();
         break;
 }

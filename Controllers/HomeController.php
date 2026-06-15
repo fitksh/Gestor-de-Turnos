@@ -2,7 +2,7 @@
 
 class HomeController
 {
-    public function __construct(private PDO $db)
+    public function __construct()
     {
     }
 

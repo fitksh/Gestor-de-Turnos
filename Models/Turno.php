@@ -60,7 +60,11 @@ class Turno
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function guardar(
+    /**
+     * Guarda un nuevo turno en la base de datos.
+     * @return bool Retorna true si el turno se guardó correctamente, false en caso contrario.
+     */
+    public function guardarTurno(
         int $idPeluquero,
         string $fechaInicio,
         string $fechaFin,
@@ -96,6 +100,10 @@ class Turno
         return $stmt->execute();
     }
 
+    /**
+     * Verifica si ya existe un turno ocupado para el peluquero en la fecha y hora especificada.
+     * @return bool Retorna true si existe un turno ocupado, false en caso contrario.
+     */
     public function existeTurno(int $idPeluquero, string $fechaInicio): bool
     {
         $sql = "
