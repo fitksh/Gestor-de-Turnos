@@ -6,7 +6,7 @@ class HomeController
     {
     }
 
-    public function index(): void
+    public function renderHome(): void
     {
         include __DIR__ . '/../views/home.php';
     }

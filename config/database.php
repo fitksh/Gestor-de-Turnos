@@ -17,7 +17,7 @@ class Database {
         $this->port     = $_ENV['PORT'] ?? '3306';
     }
 
-    public function getConnection() {
+    public function getConnection() : ?PDO{
         $this->conn = null;
         try {
             $dsn = "mysql:host=" . $this->host . ";port=" . $this->port . ";dbname=" . $this->db_name;

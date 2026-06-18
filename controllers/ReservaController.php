@@ -6,7 +6,7 @@ class ReservaController
     {
     }
 
-    public function index(): void
+    public function renderReserva(): void
     {
         $idPeluquero = (int) ($_GET['id_peluquero'] ?? 0);
         $fecha = trim($_GET['fecha'] ?? '');

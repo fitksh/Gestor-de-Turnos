@@ -1,5 +1,5 @@
 <?php 
-// Incluimos el encabezado común (Navbar, Bootstrap, Estilos)
+
 include 'views/layout/header.php'; 
 ?>
 
@@ -53,8 +53,8 @@ include 'views/layout/header.php';
             <div class="card-body p-4 d-flex flex-column justify-content-between">
                 <div>
                     <h5 class="card-title fw-bold text-dark mb-3">📍 Dónde Estamos</h5>
-                    <p class="text-muted fs-5 mb-1">Av. Principal 1234</p>
-                    <p class="text-muted small">Barrio Centro, Ciudad de Buenos Aires</p>
+                    <p class="text-muted fs-5 mb-1">Belgrano 1234</p>
+                    <p class="text-muted small">Viedma, Ciudad de Rio Negro</p>
                 </div>
                 <div class="alert alert-warning border-0 text-dark mb-0 mt-3 small" role="alert">
                     <strong>📌 Recordatorio:</strong> Los turnos se respetan con una tolerancia máxima de 10 minutos de demora.
@@ -65,6 +65,5 @@ include 'views/layout/header.php';
 </div>
 
 <?php 
-// Incluimos el pie de página común (Cierre de etiquetas y JS de Bootstrap)
 include 'views/layout/footer.php'; 
 ?>

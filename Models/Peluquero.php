@@ -8,7 +8,7 @@ class Peluquero {
     }
     
     // Método para traer todos los peluqueros de la DB
-    public function listar() {
+    public function listar() :PDOStatement {
         $query = "SELECT id, nombre, correo FROM " . $this->table_name;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();

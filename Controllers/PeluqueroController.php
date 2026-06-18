@@ -4,11 +4,14 @@ require_once __DIR__ . '/../models/Peluquero.php';
 
 class PeluqueroController
 {
-    public function __construct(private PDO $db)
+    private PDO $db;
+
+    public function __construct(PDO $db)
     {
+        $this->db = $db;
     }
 
-    public function index(): void
+    public function renderPeluqueros(): void
     {
         $peluqueroModel = new Peluquero($this->db);
         $resultado = $peluqueroModel->listar();

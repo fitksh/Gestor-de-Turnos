@@ -28,13 +28,11 @@ id_peluquero INT NOT NULL,
 cliente_contacto VARCHAR(150) NOT NULL,
 estado VARCHAR(50) NOT NULL DEFAULT 'ocupado',
 
-```
 CONSTRAINT fk_turnos_peluquero
     FOREIGN KEY (id_peluquero)
     REFERENCES peluqueros(id)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
-```
 
 );
 
